@@ -55,13 +55,13 @@ ActiveRecord::Schema.define(version: 2020_11_17_145218) do
     t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
+  # create_table "posts", force: :cascade do |t|
+  #   t.integer "user_id"
+  #   t.text "content"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.index ["user_id"], name: "index_posts_on_user_id"
+  # end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
