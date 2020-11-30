@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/msgpack-1.3.3/ext/msgpack
-/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201130-6449-nv1rjo.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201130-24896-1gfimr8.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -52,4 +52,4 @@ linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/msgpack-1.3.3/ext/msgpack
 make "DESTDIR=" install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 msgpack.bundle ./.gem.20201130-6449-t7zcgk/msgpack
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 msgpack.bundle ./.gem.20201130-24896-1yyepts/msgpack

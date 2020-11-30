@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/ffi-1.13.1/ext/ffi_c
-/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201130-6449-gchr41.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201130-24896-1g3ofwv.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... no
 checking for ffi_prep_closure_loc() in -llibffi... no
 checking for ffi_prep_closure_loc() in -llibffi-8... no
@@ -122,4 +122,4 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.bundle
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20201130-6449-uopgv1
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20201130-24896-1zdn15
