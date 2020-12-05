@@ -2,7 +2,7 @@
 
 > This is a project to simulate a redsign of twitter 
 
-![social_media_gif](/app/assets/images/twitter-redesign.png)
+![social_media_gif]()
 
 All rights to Gregoire Vella on Behance.
 
@@ -15,12 +15,12 @@ posts in the home page, also you can like or dislike a posts and you will se the
 
 ## Built With
 
-- Ruby v2.7.0
+- Ruby v2.7.2
 - Ruby on Rails v6.o.3.3
 
 ## Live Demo
 
-[Check the app out!!!](https://agile-escarpment-59970.herokuapp.com/)
+[Check the app out!!!]()
 
 You have to Sign up to acces to de home page and interact with other users
 
@@ -31,14 +31,14 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.7.0
+Ruby: 2.7.2
 Rails: 6.0.3.3
 Postgres: >=9.5
 
 ### Setup
 Clone Repo with:
 ```
-git clone https://github.com/pastorp3/Twitter-Redesign.git
+git clone 
 ```
 
 
@@ -80,17 +80,17 @@ To run the tests just excecute this command from the root project folder
 
 ## Author
 
-👤 **José Pedraza**
+👤 **Bbosa Muhamood**
 
-- Github: [@pastorp3](https://github.com/pastorp3)
-- Twitter: [@jose_pastor](https://twitter.com/jose_pastorp3 )
-- Linkedin: [linkedin](https://www.linkedin.com/in/jos%C3%A9-pedraza-acevedo-ab700a1a9/)
+- Github: [@bmuhamood]()
+- Twitter: [@]( )
+- Linkedin: [linkedin]()
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page]().
 
 ## Show your support
 
