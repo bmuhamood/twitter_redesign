@@ -1,5 +1,5 @@
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
-/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201130-24896-jdg98i.rb extconf.rb
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
+/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201205-801-vp5ect.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for sys/select.h... yes
@@ -11,10 +11,10 @@ checking for port_event_t in port.h... no
 checking for sys/resource.h... yes
 creating Makefile
 
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
 make "DESTDIR=" clean
 
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
 make "DESTDIR="
 compiling bytebuffer.c
 compiling monitor.c
@@ -97,6 +97,6 @@ VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
 1 warning generated.
 linking shared-object nio4r_ext.bundle
 
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.4/ext/nio4r
 make "DESTDIR=" install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20201130-24896-1qcpu4y
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20201205-801-12m79hc

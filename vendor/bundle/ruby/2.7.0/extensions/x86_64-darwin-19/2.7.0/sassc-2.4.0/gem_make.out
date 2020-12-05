@@ -1,11 +1,11 @@
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
-/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201130-24896-1uk1njz.rb extconf.rb
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201205-801-500rhu.rb extconf.rb
 creating Makefile
 
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" clean
 
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR="
 compiling ./libsass/src/ast.cpp
 compiling ./libsass/src/ast2c.cpp
@@ -75,6 +75,6 @@ compiling ./libsass/src/util_string.cpp
 compiling ./libsass/src/values.cpp
 linking shared-object sassc/libsass.bundle
 
-current directory: /Users/mac/Desktop/twitter_clone/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Users/mac/Desktop/twitter/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 libsass.bundle ./.gem.20201130-24896-1j3zf2z/sassc
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 libsass.bundle ./.gem.20201205-801-13dzunn/sassc
