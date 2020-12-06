@@ -2,13 +2,13 @@
 
 > This is a project to simulate a redsign of twitter 
 
-![social_media_gif](/Screenshot.png)
+![Screenshot](Screenshot.png)
 
 All rights to Gregoire Vella on Behance.
 
 ## Description
 
-This is a clone of Twitter design from Gregoire Vella , in this project you have some of the basic features
+This is a Capstone project of clone of Twitter design from Gregoire Vella , in this project you have some of the basic features
 and I add a different ones, you can create your user, follow people and be followed, you can post whatever 
 you want like how you feel today , some of the extra features is the comments part that it is after every 
 posts in the home page, also you can like or dislike a posts and you will se the number of likes that a post have. 
@@ -47,7 +47,7 @@ Instal gems with:
 ```
 yarn install --check-files
 ```
-Installl yatn 
+Install yarn 
 ```
 bundle install
 ```
@@ -82,15 +82,14 @@ To run the tests just excecute this command from the root project folder
 
 👤 **Bbosa Muhamood**
 
-- Github: [@bmuhamood]()
-- Twitter: [@]( )
-- Linkedin: [linkedin]()
+- Github: [@bmuhamood](https://github.com/bmuhamood)
+- Linkedin: [linkedin](https://www.linkedin.com/in/bbosa-muhamood-06845576/)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/bmuhamood/twitter_redesign/issues).
 
 ## Show your support
 
