@@ -1,5 +1,5 @@
 <div class="bottom-left">
-	<img class="cover-img" src="https://coverfiles.alphacoders.com/144/144992.jpg">
+	<img class="cover-img" src="/apple-touch-icon.png">
 	<div class="bottom-nav d-flex mb-3 mt-3">
       <span class="nav-bttn "><a href="/" class="hard-gray-text">POSTS</a></span>
       <span class="nav-bttn "><a href="/" class="hard-gray-text">PHOTOS</a></span>
@@ -7,35 +7,29 @@
     </div>
     <div>
     	<div class="container ">
-		    <div class="container bg-white posts pt-3 pb-3 border" >
+		    <div class="container bg-white posts pt-4 pb-4 border" >
 		    	<div class="border-bottom pb-2">
 		    		<span class="twitter-text bold">ALL POSTS</span>
 		    	</div>
 		    	<div>
 		    		<% @user.posts.each do |post| %>
 		    			<div class="d-flex mt-3 mb-3 ">
-		    				    <img class="icon-user mr-2" src="https://www.ub.edu/idp/web/sites/default/files/staff/2019-10/default-avatar.png">
+		    				    <img class="icon-user mr-4" src="http://www.ku.ac.ug/images/pageImages/grd.jpg">
 			    			<div>
 			    				<%= @user.username %><br>
 			    				<span class="gray-text"><%= post.content %></span>
-
 			    			</div>
-
-
 		    			</div>
 		    		<% end %>
 		    	</div>
 		    </div>
 		</div>
 	</div>
-
-
-
 </div>
 <div class="bottom-right ">
 	<div class="text-center total-width mt-3">
 	
-		    <img class="icon-user-show mr-2" src="https://www.ub.edu/idp/web/sites/default/files/staff/2019-10/default-avatar.png"><br>
+		    <img class="icon-user-show mr-2" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"><br>
 		<span class=" mt-3 "><%= @user.username %></span><br>
 		<span class=" mt-3  gray-text"><%= @user.email %></span><br>
 		<% if @user.id != current_user.id %>
@@ -64,7 +58,7 @@
 	<div >
 		<% @user.other_friendships.each do |user| %>
 			<div class="d-flex mt-3 pl-2">
-			<img class="icon-user mr-2" src="https://cdn.iconscout.com/icon/free/png-512/avatar-375-456327.png">
+			<img class="icon-user mr-2" src="http://www.ku.ac.ug/images/logo.png">
 			
 			<div>
 				<span class="bold"><%= user.user.username %></span><br>

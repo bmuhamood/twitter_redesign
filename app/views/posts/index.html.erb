@@ -4,7 +4,7 @@
   </div>
   <div class="bg-danger text-center"><p id="notice " ><%= alert %></p></div>
    <div class="bottom-nav d-flex mb-3">
-      <span class="nav-bttn "><a href="/" class="hard-gray-text">POSTS</a></span>
+      <span class="nav-bttn "><a href="/" class="hard-gray-text">TWEETS</a></span>
       <span class="nav-bttn "><a href="/" class="hard-gray-text">PHOTOS</a></span>
       <span class="nav-bttn "><a href="/" class="hard-gray-text">VIDEOS</a></span>
     </div>
@@ -12,26 +12,26 @@
    
     <div class="text-left">
       <div class=" conatiner bg-white pt-3 pl-3 pb-3 pr-3 rounded">
-        <span class="title title-color">POST SOMETHING</span>  
+        <span class="title title-color">TWEET SOMETHING</span>  
         <%= form_for(@post) do |form| %>
-          <%= form.text_field :content, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
+          <%= form.text_field :content, id: :post_content, class: 'form-control', placeholder: 'Create a Tweet' %>
           <% if @post.errors.full_messages.any? %>
             <p class="errors">
               <%= "Post could not be saved. #{@post.errors.full_messages.join('. ')}" %>
             </p>
           <% end %>
-          <%= form.submit 'Post', class: 'btn btn-primary mt-1 twitter-color' %>
+          <%= form.submit 'Tweet', class: 'btn btn-primary mt-1 twitter-color' %>
         <% end %>
       </div>
       <br>
       <div class="container border bg-white posts pt-1 pb-3">
         <div class="pt-3 pb-3 recent_post_border mb-3">
-          <span class="twitter-text">Recent Posts</span><br>
+          <span class="twitter-text">Recent Tweets</span><br>
         </div>
             <% @posts.each do |post| %>
             <div class="d-flex">
               <div>
-                    <img class="icon-user mr-2" src="https://www.ub.edu/idp/web/sites/default/files/staff/2019-10/default-avatar.png">
+                    <img class="icon-user mr-2" src="http://www.ku.ac.ug/images/pageImages/chancellor.jpg">
               </div>
               <div class="post-right">
                 <div class="d-flex justify-content-between">
