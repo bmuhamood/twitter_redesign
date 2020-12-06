@@ -8822,3 +8822,91 @@ Call stack
   /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:31:in `_app_views_posts_index_html_erb__4531526879442173827_32080'
 
 
+Started GET "/" for 127.0.0.1 at 2020-12-06 15:29:21 -0800
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:31
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 2], ["id", 1]]
+  ↳ app/views/posts/index.html.erb:31
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2)[0m  [["post_id", 2], ["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:31
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:43
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:47
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:47
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:47
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mFriendship Exists? (23.1ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:22:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:24:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:22:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:24:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 35.9ms | Allocations: 5665)
+  Rendered posts/index.html.erb within layouts/application (Duration: 115.8ms | Allocations: 32879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/helpers/application_helper.rb:17:in `following'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 1]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 278ms (Views: 174.9ms | ActiveRecord: 47.1ms | Allocations: 66150)
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:47:in `block (2 levels) in _app_views_posts_index_html_erb__328191858273044740_25580'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:45:in `block in _app_views_posts_index_html_erb__328191858273044740_25580'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:31:in `_app_views_posts_index_html_erb__328191858273044740_25580'
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-12-06 15:29:25 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WHIH2CCxGGFAqE1tLD5YAg+ferGIozlrJBDSze7pLn/r2wr3wk/Dm/26UNEWB/Os9N/eziTiRtsL1OgpUR4+iw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms | Allocations: 4967)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-06 15:29:25 -0800
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 579)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-06 15:29:25 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 44.7ms | Allocations: 463)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 99.3ms | Allocations: 1566)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 155ms (Views: 118.6ms | ActiveRecord: 0.0ms | Allocations: 10895)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-12-06 15:29:27 -0800
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 31.1ms | Allocations: 197)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 119)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 112.3ms | Allocations: 1452)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 132ms (Views: 130.2ms | ActiveRecord: 0.0ms | Allocations: 10996)
+
+

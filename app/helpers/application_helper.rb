@@ -9,13 +9,11 @@ module ApplicationHelper
   end
 
   def followers(user)
-    followers = user.other_friendships.count
-    followers
+    user.other_friendships.count
   end
 
   def following(user)
-    following = user.friendships.count
-    following
+    user.friendships.count
   end
 
   def follow(user)
