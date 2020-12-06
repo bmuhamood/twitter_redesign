@@ -2,7 +2,7 @@
 
 > This is a project to simulate a redsign of twitter 
 
-![social_media_gif]()
+![social_media_gif](/Screenshot.png)
 
 All rights to Gregoire Vella on Behance.
 
