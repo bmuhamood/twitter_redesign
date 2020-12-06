@@ -1,8 +1,8 @@
 # Twitter Redesign
 
-> This is a project to simulate a redsign of twitter 
+> The project screenshot
 
-![Screenshot](Screenshot.png)
+![Screenshot](public/Screenshot.png)
 
 All rights to Gregoire Vella on Behance.
 
