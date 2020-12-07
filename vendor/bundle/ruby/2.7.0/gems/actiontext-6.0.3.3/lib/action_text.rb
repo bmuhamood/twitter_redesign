@@ -1,5 +1,5 @@
-# frozen_string_literal: true
 /* stylelint-disable */
+# frozen_string_literal: true
 require "active_support"
 require "active_support/rails"
 
