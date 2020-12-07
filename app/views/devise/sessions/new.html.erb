@@ -1,0 +1,28 @@
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="form-row justify-content-center">
+    <div class="col-md-">
+      <%= f.text_field :username,  placeholder: "Username", class: "login-input form-control" %>
+    </div>
+    <div class="col-md-3">
+        <%= f.text_field :email, autofocus: true, autocomplete: "Email" ,placeholder: "email", class: "login-input form-control" %>
+    </div>
+    <div class="col-md-3">
+      <%= f.password_field :password, autocomplete: "current-password" , placeholder: "Password", class: "login-input form-control"%>
+    </div>
+    <%= f.submit "Log In",  :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+<br>
+<br>
+<br>
+<h3>See what's happening in the world</h3>
+<br>
+<br>
+  <span class="mt-5">Create An Account</span><br><br>
+    <%= link_to "Sign up", new_user_registration_path, class: "Sign-in text-white t-color" %><br><br>
+    <%= link_to "Log in", new_user_session_path, class: "Sign-in bg-white text-dark border border-dark" %>
+
+    <div class="d-flex justify-content-center mt-3">
+    <%= render "devise/shared/links" %>
+  </div>
