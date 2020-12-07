@@ -1,3 +1,4 @@
+/* stylelint-disable */
 @import "bootstrap/scss/bootstrap";
 
 html {
@@ -151,6 +152,7 @@ body {
 }
 .total-width {
   min-width: 100%;
+}
 
 .bold {
   font-weight: 700;
@@ -168,3 +170,4 @@ body {
   border: 1px solid black;
   border-radius: 5px;
 }
+/* stylelint-enable */
