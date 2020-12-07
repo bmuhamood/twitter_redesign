@@ -1,3 +1,4 @@
+/* stylelint-disable */
 body {
   background-color: #fff;
   color: #333;
@@ -78,3 +79,4 @@ div.actions {
 label {
   display: block;
 }
+/* stylelint-enable */

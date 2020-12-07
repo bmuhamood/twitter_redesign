@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+/* stylelint-disable */
 require "active_support"
 require "active_support/rails"
 
@@ -35,3 +35,4 @@ module ActionText
     autoload :TrixConversion
   end
 end
+/* stylelint-enable */
