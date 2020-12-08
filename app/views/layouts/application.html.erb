@@ -15,7 +15,7 @@
      
       <div class="left-container bg-secondary col-md-2">
           <div class="d-flex pt-3 pb-3 pr-3 pl-3">
-            <img class="icon-user mr-2" src="https://www.ub.edu/idp/web/sites/default/files/staff/2019-10/default-avatar.png">
+          <%= image_tag user_avatar(current_user, 50), class: "rounded-circle" %>
             <span class="title-color username text-light"><%= link_to "#{current_user.username}", "/users/#{current_user.id}",
             class: "title-color text-light" %></span>
           </div>

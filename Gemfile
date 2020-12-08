@@ -13,6 +13,8 @@ gem 'bullet', group: 'development'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 
+gem 'active_storage_validations', '~> 0.9.0'
+gem 'gravatar_image_tag', '~> 1.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

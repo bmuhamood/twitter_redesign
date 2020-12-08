@@ -2,6 +2,7 @@
   <div class="bg-success text-center">
     <p id="notice " ><%= notice %></p>
   </div>
+
   <div class="bg-danger text-center"><p id="notice " ><%= alert %></p></div>
    <div class="bottom-nav d-flex mb-3">
       <span class="nav-bttn "><a href="/" class="hard-gray-text">TWEETS</a></span>
@@ -11,7 +12,7 @@
   <div class="container ">
    
     <div class="text-left">
-      <div class=" conatiner bg-white pt-3 pl-3 pb-3 pr-3 rounded">
+      <div class=" container bg-white pt-3 pl-3 pb-3 pr-3 rounded">
         <span class="title title-color">TWEET SOMETHING</span>  
         <%= form_for(@post) do |form| %>
           <%= form.text_field :content, id: :post_content, class: 'form-control', placeholder: 'Create a Tweet' %>
