@@ -1,3 +1,4 @@
+/* stylelint-disable */
 /* Override this file with custom rules */
 
 body {
@@ -123,3 +124,4 @@ pre.code a {
     border-bottom: 1px dotted #bbf;
 }
 
+/* stylelint-enable */

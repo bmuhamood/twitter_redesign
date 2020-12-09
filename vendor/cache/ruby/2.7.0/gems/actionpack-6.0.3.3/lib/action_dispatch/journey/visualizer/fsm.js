@@ -1,3 +1,4 @@
+/* stylelint-disable */
 function tokenize(input, callback) {
   while(input.length > 0) {
     callback(input.match(/^[\/\.\?]|[^\/\.\?]+/)[0]);
@@ -132,3 +133,4 @@ function match(input) {
   return false;
 }
 
+/* stylelint-enable */
