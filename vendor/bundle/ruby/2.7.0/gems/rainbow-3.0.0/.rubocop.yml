@@ -4,6 +4,8 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   TargetRubyVersion: "2.1"
+  Style/Encoding:
+  Enabled: false
   Exclude:
     - "spec/**/*"
     - "vendor/**/*"
