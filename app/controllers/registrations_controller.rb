@@ -1,4 +1,6 @@
 # rubocop: disable Layout/TrailingEmptyLines
+# rubocop: disable Lint/RedundantCopDisableDirective
+# rubocop: disable Layout/LineLength
 class RegistrationsController < Devise::RegistrationsController
   private
 
@@ -11,3 +13,5 @@ class RegistrationsController < Devise::RegistrationsController
   end
 end
 # rubocop: enable Layout/TrailingEmptyLines
+# rubocop: enable Lint/RedundantCopDisableDirective
+# rubocop: enable Layout/LineLength
