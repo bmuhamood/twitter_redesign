@@ -14159,3 +14159,622 @@ Call stack
   /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:41:in `_app_views_posts_index_html_erb__1631385023090535192_26760'
 
 
+Started GET "/" for 127.0.0.1 at 2020-12-10 09:46:04 -0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (49.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (34.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 3], ["post_id", 2], ["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mLike Load (41.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:5:in `like_or_dislike_btn'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:5:in `like_or_dislike_btn'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:5:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mFriendship Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:32:in `follow'
+  [1m[36mFriendship Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:32:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 47.1ms | Allocations: 6548)
+  Rendered posts/index.html.erb within layouts/application (Duration: 248.6ms | Allocations: 38997)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mActiveStorage::Attachment Load (25.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:18:in `user_avatar'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/helpers/application_helper.rb:26:in `following'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 1]]
+  ↳ app/helpers/application_helper.rb:14:in `followers'
+Completed 200 OK in 750ms (Views: 455.5ms | ActiveRecord: 205.1ms | Allocations: 77356)
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:57:in `block (2 levels) in _app_views_posts_index_html_erb__1721354301851570546_26160'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:55:in `block in _app_views_posts_index_html_erb__1721354301851570546_26160'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:41:in `_app_views_posts_index_html_erb__1721354301851570546_26160'
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-12-10 10:55:31 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QH9O0hXVx+cCkdA71PcEo8Vt44KVostPWQaWrXoWsGG3ZKq2Zjo7OOnltkPUMEvCFOjrl7etrHFnakwZeX8UfA=="}
+  [1m[36mUser Load (72.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1202ms (ActiveRecord: 73.3ms | Allocations: 14505)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-10 10:55:36 -0800
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 629)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 10:55:36 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 19.1ms | Allocations: 466)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 74)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 64.6ms | Allocations: 2449)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2404ms (Views: 2359.3ms | ActiveRecord: 0.0ms | Allocations: 68111)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 10:56:02 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 29.8ms | Allocations: 417)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 34.5ms | Allocations: 1404)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 455ms (Views: 453.4ms | ActiveRecord: 0.0ms | Allocations: 11187)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-12-10 10:56:18 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"9PO70Cn+6rKXxdzZcnacGyIMA218BhSHvM/QYntat/nhnq94meaOHV0et8kEwy7lGXnjJogpT4Qq68rh8x23tA==", "user"=>{"username"=>"bmuhamood", "email"=>"bbosa2009@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bbosa2009@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2290ms (ActiveRecord: 0.7ms | Allocations: 8557)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-10 10:56:20 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 3], ["post_id", 2], ["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mLike Load (101.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mFriendship Exists? (23.8ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 63.8ms | Allocations: 6384)
+  Rendered posts/index.html.erb within layouts/application (Duration: 381.8ms | Allocations: 35656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16:in `user_avatar'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 1]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 680ms (Views: 352.7ms | ActiveRecord: 135.6ms | Allocations: 53876)
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:57:in `block (2 levels) in _app_views_posts_index_html_erb__1721354301851570546_36440'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:55:in `block in _app_views_posts_index_html_erb__1721354301851570546_36440'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:41:in `_app_views_posts_index_html_erb__1721354301851570546_36440'
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-10 10:57:17 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 3], ["post_id", 2], ["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mFriendship Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mFriendship Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 11.5ms | Allocations: 5009)
+  Rendered posts/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 23650)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16:in `user_avatar'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 1]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 77ms (Views: 64.5ms | ActiveRecord: 8.2ms | Allocations: 37228)
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:57:in `block (2 levels) in _app_views_posts_index_html_erb__1721354301851570546_36780'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:55:in `block in _app_views_posts_index_html_erb__1721354301851570546_36780'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:41:in `_app_views_posts_index_html_erb__1721354301851570546_36780'
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-12-10 10:57:30 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G7854bDXOZaawZfCDlnKAY8ts2MBJy8+ocy/J8IzuIenSZ/kpIlwKnyVaDf+rBebxb/2Nd9/LPCIVqlwbSLSIw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 2608)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-10 10:57:30 -0800
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 540)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 10:57:30 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 414)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1401)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 10553)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 10:58:03 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 414)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.0ms | Allocations: 11149)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 10:58:41 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 414)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms | Allocations: 11242)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 10:58:52 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 414)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1399)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 86.8ms | ActiveRecord: 0.0ms | Allocations: 11183)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-12-10 10:59:04 -0800
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 39.3ms | Allocations: 199)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 120)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 862.0ms | Allocations: 1812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 881ms (Views: 414.5ms | ActiveRecord: 465.4ms | Allocations: 11340)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 11:01:45 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 414)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 11190)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-12-10 11:02:01 -0800
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 191)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1507)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 0.0ms | Allocations: 10968)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-12-10 11:04:11 -0800
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"BVTo9gkTwhmxZ9E9edtiNHOfiz9rwpxaZ3TRZou5cYyZFuIpHYq5OWzGGfoxv/0G7oMNNrK4TwVhDwhq6Ti+mw==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f80c64cbcf8 @tempfile=#<Tempfile:/var/folders/30/js83mk313s54vj831__93r580000gn/T/RackMultipart20201210-37322-ibr9mw.png>, @original_filename="ijsi5fzb1nbkbhxa2gc1.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"ijsi5fzb1nbkbhxa2gc1.png\"\r\nContent-Type: image/png\r\n">, "username"=>"Hussein2019", "email"=>"test4@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Hussein2019"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test4@test.com"], ["encrypted_password", "$2a$12$YCuYewc4aAgbXF8ThM2fVehtyojUsW1n3IB8Vk72n250Yh20Cu2Ye"], ["created_at", "2020-12-10 19:04:11.418262"], ["updated_at", "2020-12-10 19:04:11.418262"], ["username", "Hussein2019"]]
+  [1m[36mActiveStorage::Blob Load (226.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "wqrgd7aby58yey5lahuaxufzjtvx"], ["filename", "ijsi5fzb1nbkbhxa2gc1.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 456758], ["checksum", "EItt3Q6JdWdNoQYuzIEc8w=="], ["created_at", "2020-12-10 19:04:12.039285"]]
+  [1m[36mActiveStorage::Attachment Create (80.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 4], ["blob_id", 2], ["created_at", "2020-12-10 19:04:12.044014"]]
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1 WHERE "users"."id" = $2[0m  [["updated_at", "2020-12-10 19:04:12.128177"], ["id", 4]]
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (5.8ms) [0m[32mUploaded file to key: wqrgd7aby58yey5lahuaxufzjtvx (checksum: EItt3Q6JdWdNoQYuzIEc8w==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: add762ac-4b73-4ea2-9b1a-0faabae3627f) to Async(active_storage_analysis) with arguments: #<GlobalID:0x00007f80cb8529a8 @uri=#<URI::GID gid://twitter-redesign/ActiveStorage::Blob/2>>
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2004ms (ActiveRecord: 361.5ms | Allocations: 79430)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-10 11:04:13 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 3], ["post_id", 2], ["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 3], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 2], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 1], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 4], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 4], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mFriendship Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 4], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 4], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 4], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 13.1ms | Allocations: 5167)
+  Rendered posts/index.html.erb within layouts/application (Duration: 56.9ms | Allocations: 23571)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16:in `user_avatar'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:17:in `user_avatar'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 4]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 163ms (Views: 149.5ms | ActiveRecord: 9.0ms | Allocations: 39256)
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:57:in `block (2 levels) in _app_views_posts_index_html_erb__1721354301851570546_38340'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:55:in `block in _app_views_posts_index_html_erb__1721354301851570546_38340'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:41:in `_app_views_posts_index_html_erb__1721354301851570546_38340'
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aaba27c1da5da188a78775ee0f08efaa0bfe148d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lMTlRCNE5UQWhCam9HUlZRPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--13a5b658e510ab7659410238820cc5041e220dbc/ijsi5fzb1nbkbhxa2gc1.png" for 127.0.0.1 at 2020-12-10 11:04:13 -0800
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aaba27c1da5da188a78775ee0f08efaa0bfe148d", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lMTlRCNE5UQWhCam9HUlZRPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--13a5b658e510ab7659410238820cc5041e220dbc", "filename"=>"ijsi5fzb1nbkbhxa2gc1"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/wqrgd7aby58yey5lahuaxufzjtvx/1498f876b897303f91fc28ca41b25cd76b713d87774d2eb9366c605b0bb54b91 (no)[0m
+[36m  Disk Storage (0.7ms) [0m[34mDownloaded file from key: wqrgd7aby58yey5lahuaxufzjtvx[0m
+DEPRECATION WARNING: Generating image variants will require the image_processing gem in Rails 6.1. Please add `gem 'image_processing', '~> 1.2'` to your Gemfile. (called from transformer at /Users/mac/Desktop/twitter_redesign/vendor/bundle/ruby/2.7.0/gems/activestorage-6.0.3.3/app/models/active_storage/variation.rb:64)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.5ms | Allocations: 4136)
+
+
+  
+LoadError (cannot load such file -- mini_magick):
+  
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/loaded_features_index.rb:89:in `register'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:44:in `require'
+zeitwerk (2.4.0) lib/zeitwerk/kernel.rb:34:in `require'
+activestorage (6.0.3.3) lib/active_storage/transformers/mini_magick_transformer.rb:3:in `<main>'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.4.8) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.4.0) lib/zeitwerk/kernel.rb:34:in `require'
+activestorage (6.0.3.3) app/models/active_storage/variation.rb:72:in `rescue in transformer'
+activestorage (6.0.3.3) app/models/active_storage/variation.rb:64:in `transformer'
+activestorage (6.0.3.3) app/models/active_storage/variation.rb:52:in `block in transform'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:182:in `instrument'
+activestorage (6.0.3.3) app/models/active_storage/variation.rb:51:in `transform'
+activestorage (6.0.3.3) app/models/active_storage/variant.rb:105:in `transform'
+activestorage (6.0.3.3) app/models/active_storage/variant.rb:100:in `block in process'
+activestorage (6.0.3.3) lib/active_storage/downloader.rb:15:in `block in open'
+activestorage (6.0.3.3) lib/active_storage/downloader.rb:24:in `open_tempfile'
+activestorage (6.0.3.3) lib/active_storage/downloader.rb:12:in `open'
+activestorage (6.0.3.3) lib/active_storage/service.rb:86:in `open'
+activestorage (6.0.3.3) app/models/active_storage/blob.rb:219:in `open'
+activestorage (6.0.3.3) app/models/active_storage/variant.rb:99:in `process'
+activestorage (6.0.3.3) app/models/active_storage/variant.rb:67:in `processed'
+activestorage (6.0.3.3) app/controllers/active_storage/representations_controller.rb:12:in `show'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+bullet (6.1.0) lib/bullet/rack.rb:15:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [add762ac-4b73-4ea2-9b1a-0faabae3627f] Performing ActiveStorage::AnalyzeJob (Job ID: add762ac-4b73-4ea2-9b1a-0faabae3627f) from Async(active_storage_analysis) enqueued at 2020-12-10T19:04:13Z with arguments: #<GlobalID:0x00007f80cb39ead8 @uri=#<URI::GID gid://twitter-redesign/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [add762ac-4b73-4ea2-9b1a-0faabae3627f] [36m  Disk Storage (0.8ms) [0m[34mDownloaded file from key: wqrgd7aby58yey5lahuaxufzjtvx[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [add762ac-4b73-4ea2-9b1a-0faabae3627f] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [add762ac-4b73-4ea2-9b1a-0faabae3627f]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [add762ac-4b73-4ea2-9b1a-0faabae3627f]   [1m[36mActiveStorage::Blob Update (41.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [add762ac-4b73-4ea2-9b1a-0faabae3627f]   [1m[35m (81.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [add762ac-4b73-4ea2-9b1a-0faabae3627f] Performed ActiveStorage::AnalyzeJob (Job ID: add762ac-4b73-4ea2-9b1a-0faabae3627f) from Async(active_storage_analysis) in 138.03ms
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-12-10 11:07:47 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EGohm8DfH60kiX6yCyYffw5o56v/XIw3yU6NgV3dsTd3rtygqoqlYgtW8DVMQkHEjvs3oxJCrGDGs/ZYuapjsw=="}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms | Allocations: 2653)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-10 11:07:47 -0800
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 546)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-10 11:07:47 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 77)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 651)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 8908)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-12-10 11:07:54 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"RuFgIXm4sG4nh31YVQZWVa1izUi/URSkPmLk90pcWBg7WzI+76hNgRrJfq997xHaFrWYQuMN6TzQsT6YMScYgQ==", "user"=>{"username"=>"bmuhamood", "email"=>"bbosa2009@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bbosa2009@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 273ms (ActiveRecord: 0.7ms | Allocations: 3410)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-10 11:07:54 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 3], ["post_id", 2], ["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:57
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 1], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 11.8ms | Allocations: 5690)
+  Rendered posts/index.html.erb within layouts/application (Duration: 49.9ms | Allocations: 23648)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16:in `user_avatar'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 1]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 77ms (Views: 65.3ms | ActiveRecord: 7.6ms | Allocations: 35986)
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:57:in `block (2 levels) in _app_views_posts_index_html_erb__1721354301851570546_38340'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:55:in `block in _app_views_posts_index_html_erb__1721354301851570546_38340'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:41:in `_app_views_posts_index_html_erb__1721354301851570546_38340'
+
+
