@@ -1,3 +1,5 @@
+# rubocop:disable Lint/UnneededDisable
+# rubocop:disable all"
 inherit_from: .rubocop_todo.yml
 
 AllCops:
@@ -22,3 +24,4 @@ StringLiterals:
   Enabled: false
 
 This is the configuration used to check the rubocop source code.
+# rubocop:enable all
