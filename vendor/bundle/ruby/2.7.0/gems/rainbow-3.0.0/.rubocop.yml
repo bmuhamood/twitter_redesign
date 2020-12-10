@@ -8,6 +8,8 @@ AllCops:
   TargetRubyVersion: "2.1"
   Style/Encoding:
   Enabled: false
+  Lint/UnneededDisable:
+  Enabled: false
   Exclude:
     - "spec/**/*"
     - "vendor/**/*"
