@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/twitter_redesign/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
-/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201206-32483-5qebox.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.7.1/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.1/lib/ruby/site_ruby/2.7.0 -r ./siteconf20201209-95802-t81t8y.rb extconf.rb
 creating Makefile
 
 current directory: /Users/mac/Desktop/twitter_redesign/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
@@ -77,4 +77,4 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/mac/Desktop/twitter_redesign/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 libsass.bundle ./.gem.20201206-32483-tnu1m4/sassc
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 libsass.bundle ./.gem.20201209-95802-okam2e/sassc

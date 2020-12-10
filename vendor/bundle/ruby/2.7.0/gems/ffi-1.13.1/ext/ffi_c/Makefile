@@ -12,12 +12,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/mac/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0
+topdir = /Users/mac/.rvm/rubies/ruby-2.7.1/include/ruby-2.7.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/mac/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/x86_64-darwin19
+arch_hdrdir = /Users/mac/.rvm/rubies/ruby-2.7.1/include/ruby-2.7.0/x86_64-darwin19
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/mac/.rvm/rubies/ruby-2.7.2
+prefix = $(DESTDIR)/Users/mac/.rvm/rubies/ruby-2.7.1
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20201206-32483-pykrs
-sitelibdir = $(DESTDIR)./.gem.20201206-32483-pykrs
+sitearchdir = $(DESTDIR)./.gem.20201209-95802-cffg9e
+sitelibdir = $(DESTDIR)./.gem.20201209-95802-cffg9e
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)

@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/twitter_redesign/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
-/Users/mac/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201206-32483-119hcra.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.7.1/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.7.1/lib/ruby/site_ruby/2.7.0 -r ./siteconf20201209-95802-1mys7xi.rb extconf.rb
 creating Makefile
 
 current directory: /Users/mac/Desktop/twitter_redesign/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
@@ -11,16 +11,16 @@ compiling bcrypt_ext.c
 bcrypt_ext.c:17:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
             NIL_P(input) ? 0 : RSTRING_LEN(input));
                                ^~~~~~~~~~~~~~~~~~
-/Users/mac/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1007:6: note: expanded from macro 'RSTRING_LEN'
+/Users/mac/.rvm/rubies/ruby-2.7.1/include/ruby-2.7.0/ruby/ruby.h:1007:6: note: expanded from macro 'RSTRING_LEN'
      RSTRING_EMBED_LEN(str) : \
      ^~~~~~~~~~~~~~~~~~~~~~
-/Users/mac/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1003:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+/Users/mac/.rvm/rubies/ruby-2.7.1/include/ruby-2.7.0/ruby/ruby.h:1003:6: note: expanded from macro 'RSTRING_EMBED_LEN'
      (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 bcrypt_ext.c:17:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
             NIL_P(input) ? 0 : RSTRING_LEN(input));
                                ^~~~~~~~~~~~~~~~~~
-/Users/mac/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1008:28: note: expanded from macro 'RSTRING_LEN'
+/Users/mac/.rvm/rubies/ruby-2.7.1/include/ruby-2.7.0/ruby/ruby.h:1008:28: note: expanded from macro 'RSTRING_LEN'
      RSTRING(str)->as.heap.len)
      ~~~~~~~~~~~~~~~~~~~~~~^~~
 2 warnings generated.
@@ -36,4 +36,4 @@ linking shared-object bcrypt_ext.bundle
 
 current directory: /Users/mac/Desktop/twitter_redesign/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
 make "DESTDIR=" install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bcrypt_ext.bundle ./.gem.20201206-32483-1wz1uo5
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bcrypt_ext.bundle ./.gem.20201209-95802-ohv9aq

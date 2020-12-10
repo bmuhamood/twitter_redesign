@@ -1,4 +1,3 @@
-/* stylelint-disable */
 div {
    url: url(asset-path("foo.svg"));
    url: url(image-path("foo.png"));
@@ -9,4 +8,3 @@ div {
    url: url(javascript-path("foo.js"));
    url: url(stylesheet-path("foo.css"));
 }
-/* stylelint-enable */
