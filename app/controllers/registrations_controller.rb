@@ -1,6 +1,6 @@
-# rubocop: disable Layout/TrailingEmptyLines
 # rubocop: disable Lint/RedundantCopDisableDirective
 # rubocop: disable Layout/LineLength
+Lint/RedundantCopDisableDirective
 class RegistrationsController < Devise::RegistrationsController
   private
 
@@ -12,6 +12,5 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:avatar, :name, :username, :email, :password, :password_confirmation, :current_password)
   end
 end
-# rubocop: enable Layout/TrailingEmptyLines
 # rubocop: enable Lint/RedundantCopDisableDirective
 # rubocop: enable Layout/LineLength
