@@ -1,6 +1,5 @@
 # rubocop: disable Lint/RedundantCopDisableDirective
 # rubocop: disable Layout/LineLength
-Lint/RedundantCopDisableDirective
 class RegistrationsController < Devise::RegistrationsController
   private
 
