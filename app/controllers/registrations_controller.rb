@@ -1,4 +1,4 @@
-# rubocop: disable Layout/LineLength
+# rubocop: disable Layout/TrailingEmptyLines
 class RegistrationsController < Devise::RegistrationsController
   private
 
@@ -10,4 +10,4 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:avatar, :name, :username, :email, :password, :password_confirmation, :current_password)
   end
 end
-# rubocop: enable Layout/LineLength
+# rubocop: enable Layout/TrailingEmptyLines
