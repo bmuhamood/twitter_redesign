@@ -1,3 +1,4 @@
 /vendor/
 .DS_store
 /node_modules/
+*tmp/*
