@@ -14,7 +14,7 @@
 		    	<div>
 		    		<% @user.posts.each do |post| %>
 		    			<div class="d-flex mt-3 mb-3 ">
-		    			<%= image_tag user_avatar(current_user, 50), class: "rounded-circle" %>
+		    				    <img class="icon-user mr-4" src="http://www.ku.ac.ug/images/pageImages/grd.jpg">
 			    			<div>
 			    				<%= @user.username %><br>
 			    				<span class="gray-text"><%= post.content %></span>
@@ -58,7 +58,7 @@
 	<div >
 		<% @user.other_friendships.each do |user| %>
 			<div class="d-flex mt-3 pl-2">
-			<img class="icon-user mr-2" src="http://www.ku.ac.ug/images/logo.png">
+			<%= image_tag user_avatar(current_user, 50), class: "rounded-circle" %>
 			
 			<div>
 				<span class="bold"><%= user.user.username %></span><br>
