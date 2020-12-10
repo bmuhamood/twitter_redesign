@@ -1,5 +1,5 @@
 # rubocop: disable Style/FrozenStringLiteralComment
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 module ApplicationCable
   class Channel < ActionCable::Channel::Base
