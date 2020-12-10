@@ -14,7 +14,7 @@
 		    	<div>
 		    		<% @user.posts.each do |post| %>
 		    			<div class="d-flex mt-3 mb-3 ">
-		    				   <%= image_tag user_avatar(current_user, 50), class: "rounded-circle" %>
+		    				   <%= image_tag user_avatar(current_user, 30), class: "rounded" %>
 			    			<div>
 			    				<%= @user.username %><br>
 			    				<span class="gray-text"><%= post.content %></span>
