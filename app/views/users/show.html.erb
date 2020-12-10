@@ -14,7 +14,7 @@
 		    	<div>
 		    		<% @user.posts.each do |post| %>
 		    			<div class="d-flex mt-3 mb-3 ">
-		    				    <img class="icon-user mr-4" src="http://www.ku.ac.ug/images/pageImages/grd.jpg">
+		    			<%= image_tag user_avatar(current_user, 50), class: "rounded-circle" %>
 			    			<div>
 			    				<%= @user.username %><br>
 			    				<span class="gray-text"><%= post.content %></span>
