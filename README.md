@@ -4,8 +4,6 @@
 
 ![Screenshot](public/Screenshot.png)
 
-All rights to Gregoire Vella on Behance.
-
 ## Description
 
 This is a Capstone project of clone of Twitter design from Gregoire Vella , in this project you have some of the basic features
@@ -99,6 +97,7 @@ Give a ⭐️ if you like this project!
 
 - Microverse
 - Odin Project
+- All rights to Gregoire Vella on Behance.
 
 ## 📝 License
 
