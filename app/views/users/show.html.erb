@@ -1,5 +1,5 @@
 <div class="bottom-left">
-	<img class="cover-img" src="/apple-touch-icon.png">
+	<%= image_tag user_avatar(current_user), class: "img-fluid", style: "height:30%;width:100%;" %>
 	<div class="bottom-nav d-flex mb-3 mt-3">
       <span class="nav-bttn "><a href="/" class="hard-gray-text">POSTS</a></span>
       <span class="nav-bttn "><a href="/" class="hard-gray-text">PHOTOS</a></span>
@@ -7,14 +7,14 @@
     </div>
     <div>
     	<div class="container ">
-		    <div class="container bg-white posts pt-4 pb-4 border" >
+		    <div class="container bg-white posts pt-4 pb-4 border">
 		    	<div class="border-bottom pb-2">
 		    		<span class="twitter-text bold">ALL POSTS</span>
 		    	</div>
 		    	<div>
 		    		<% @user.posts.each do |post| %>
 		    			<div class="d-flex mt-3 mb-3 ">
-		    				    <img class="icon-user mr-4" src="http://www.ku.ac.ug/images/pageImages/grd.jpg">
+		    				  <img class="icon-user mr-4" src="http://www.ku.ac.ug/images/pageImages/grd.jpg">
 			    			<div>
 			    				<%= @user.username %><br>
 			    				<span class="gray-text"><%= post.content %></span>

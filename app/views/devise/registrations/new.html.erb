@@ -9,6 +9,12 @@
       <%= f.file_field :avatar %>
   </div>
 
+  <div>
+  <h4>Add Banner Image</h4>
+    <%= f.file_field :avatar %>
+    <%= image_tag user_avatar(resource, 100), class: "img-fluid" %>
+  </div>
+
   <div class="form-group">
     <br>
     <%= f.text_field :username, placeholder: "Username", class: "signin-input" %>

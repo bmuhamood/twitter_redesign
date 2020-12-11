@@ -170,10 +170,6 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.4)
-    rspec (3.9.0)
-      rspec-core (~> 3.9.0)
-      rspec-expectations (~> 3.9.0)
-      rspec-mocks (~> 3.9.0)
     rspec-core (3.9.2)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
@@ -272,7 +268,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bullet
   byebug
-  capybara
+  capybara (>= 2.15)
   devise (~> 4.7, >= 4.7.2)
   gravatar_image_tag (~> 1.2)
   hirb (~> 0.7.3)
@@ -282,7 +278,6 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.3)
   rails-controller-testing
-  rspec
   rspec-rails
   rubocop
   sass-rails (>= 6)
