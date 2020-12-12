@@ -18,4 +18,12 @@ RSpec.describe User, type: :model do
   it 'Checks if a user can be created' do
     expect(test_u1).to be_valid
   end
+
+    it '3. Checks for the friendships association' do
+    expect(test_u1.friendships).not_to be_nil
+  end
+
+  it '4. Checks for the other_friendships association' do
+    expect(test_u1.other_friendships).not_to be_nil
+  end
 end

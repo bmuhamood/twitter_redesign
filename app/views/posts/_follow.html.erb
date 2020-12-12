@@ -7,7 +7,7 @@
 
 			<% @user.each do |user| %>
 				<div class="d-flex">
-					   <img class="icon-user mr-2" src="http://www.ku.ac.ug/images/pageImages/chancellor.jpg">
+					   <%= image_tag user_avatar(current_user, 50), class: "rounded-circle mb-2" %>
 					<div>
 						<%= user.username %><br>
 						<span class="follow-link"><%= follow(user) %></span>
