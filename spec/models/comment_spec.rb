@@ -9,7 +9,7 @@ RSpec.describe Comment, type: :model do
     expect(test_c).to be_invalid
   end
 
-    it '2. SUCCESS CHECK - Checks if a tweet can be created' do
+  it '2. SUCCESS CHECK - Checks if a tweet can be created' do
     User.create(email: 'bbosa2009@gmail.com', username: 'bmuhamood', password: 'mypassword')
     test_u = User.first
     Post.create(content: 'testing the tweet', user_id: test_u.id)

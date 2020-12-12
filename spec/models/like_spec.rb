@@ -9,7 +9,7 @@ RSpec.describe Like, type: :model do
     expect(test_l).to be_invalid
   end
 
-    it '2. SUCCESS CHECK - Checks if a like can be created' do
+  it '2. SUCCESS CHECK - Checks if a like can be created' do
     User.create(email: 'bbosa2009@gmail.com', username: 'bmuhamood', password: 'mypassword')
     test_u = User.first
     Post.create(content: 'this is test tweet', user_id: test_u.id)

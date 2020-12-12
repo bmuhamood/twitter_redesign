@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
     expect(test_u1).to be_valid
   end
 
-    it '3. Checks for the friendships association' do
+  it '3. Checks for the friendships association' do
     expect(test_u1.friendships).not_to be_nil
   end
 
