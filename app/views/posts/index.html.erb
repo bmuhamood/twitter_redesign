@@ -41,7 +41,7 @@
             <% @posts.each do |post| %>
             <div class="d-flex">
               <div>
-                <%= image_tag user_avatar(current_user, 50), class: "rounded-circle" %>
+                <%= image_tag(@user.photo), class: "rounded-circle" %>
               </div>
               <div class="post-right">
                 <div class="d-flex justify-content-between">

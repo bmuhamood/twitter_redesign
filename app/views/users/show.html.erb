@@ -1,5 +1,5 @@
 <div class="bottom-left">
-	<%= image_tag user_avatar(current_user), class: "img-fluid", style: "height:30%;width:100%;" %>
+	<%= image_tag(@user.cover_image) %>
 	<div class="bottom-nav d-flex mb-3 mt-3">
       <span class="nav-bttn "><a href="/" class="hard-gray-text">POSTS</a></span>
       <span class="nav-bttn "><a href="/" class="hard-gray-text">PHOTOS</a></span>
@@ -14,7 +14,7 @@
 		    	<div>
 		    		<% @user.posts.each do |post| %>
 		    			<div class="d-flex mt-3 mb-3 ">
-		    				  <%= image_tag user_avatar(current_user, 50), class: "rounded-circle" %>
+		    				<%= image_tag(@user.photo), class: "rounded-circle" %>
 			    			<div>
 			    				<%= @user.username %><br>
 			    				<span class="gray-text"><%= post.content %></span>
