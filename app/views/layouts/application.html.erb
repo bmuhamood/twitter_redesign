@@ -15,7 +15,7 @@
      
       <div class="left-container bg-secondary col-md-2">
           <div class="d-flex pt-3 pb-3 pr-3 pl-3">
-            <%= image_tag(@user.photo), class: "rounded-circle" %>
+            <%= image_tag(current_user.photo) %>
             <span class="title-color username text-light"><%= link_to "#{current_user.username}", "/users/#{current_user.id}",
             class: "title-color text-light" %></span>
           </div>

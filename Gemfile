@@ -9,7 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 gem 'bullet'
 
 gem 'spec_writer', group: 'development'
-
+gem 'cloudinary'
 # Use Puma as the app server
 gem 'active_storage_validations', '~> 0.9.0'
 gem 'gravatar_image_tag', '~> 1.2'

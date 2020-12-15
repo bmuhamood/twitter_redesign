@@ -4,7 +4,7 @@
   <div class="container-fluid bg-primary">
     <a class="navbar-brand" href="#">
       <p class="text-light">TWITTER<p>
-      <a class="text-light"><%= current_user.username %></a>
+      <a class="text-light"><%=current_user.username %></a>
     </a>
   </div>
 </nav>
@@ -41,7 +41,7 @@
             <% @posts.each do |post| %>
             <div class="d-flex">
               <div>
-                <%= image_tag(@user.photo), class: "rounded-circle" %>
+                <%= image_tag(current_user.photo) %>
               </div>
               <div class="post-right">
                 <div class="d-flex justify-content-between">
