@@ -7,7 +7,7 @@
 
 			<% @users.each do |user| %>
 				<div class="d-flex mt-2">
-					   <%= image_tag(user.photo.variant(resize: "50x50"), size: '50', class: 'rounded-circle') %>
+					   <%= image_tag(user.photo.variant(resize: "40x40"), size: '50', class: 'rounded-circle') %>
 					<div class="ml-3">
 						<%= user.username %><br>
 						<span class="follow-link"><%= follow(user) %></span>
