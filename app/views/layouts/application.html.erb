@@ -9,14 +9,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
   <body class="main-grid">
     <% if user_signed_in? %>
      
       <div class="left-container bg-secondary col-md-2">
-          <div class="d-flex pt-3 pb-3 pr-3 pl-3">
-            <%= image_tag(current_user.photo) %>
-            <span class="title-color username text-light"><%= link_to "#{current_user.username}", "/users/#{current_user.id}",
+          <div class="d-flex pb-3 pr-3 pl-2">
+            <%= image_tag(current_user.photo.variant(resize: "60x60"), size: '50', class: 'rounded-circle mr-2') %>
+            <span class="title-color username text-light ml-3"><%= link_to "#{current_user.username}", "/users/#{current_user.id}",
             class: "title-color text-light" %></span>
           </div>
           <div class="d-flex text-center pl-3 pr-3 justify-content-between mt-3">

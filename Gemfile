@@ -7,7 +7,7 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use sqlite3 as the database for Active Record
 gem 'bullet'
-
+gem "mini_magick"
 gem 'spec_writer', group: 'development'
 gem 'cloudinary'
 # Use Puma as the app server

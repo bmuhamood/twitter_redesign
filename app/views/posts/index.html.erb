@@ -1,12 +1,10 @@
 <div class=" bottom-left">
+  <div class="top-nav d-flex justify-content-between align-items-center  bg-primary p-3 text-light">
+      <p>Twitter</p>
+      <p>Microverse</p>
+  </div>
   <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid bg-primary">
-    <a class="navbar-brand" href="#">
-      <p class="text-light">TWITTER<p>
-      <a class="text-light"><%=current_user.username %></a>
-    </a>
-  </div>
 </nav>
   <div class="bg-success text-center text-light">
     <p id="notice " ><%= notice %></p>
@@ -22,7 +20,7 @@
    
     <div class="text-left">
       <div class="container bg-white pt-3 pl-3 pb-3 pr-3 rounded-circle">
-        <span class="title title-color">TWEET SOMETHING</span>  
+        <span class="title title-color">TWEET</span>  
         <%= form_for(@post) do |form| %>
           <%= form.text_field :content, id: :post_content, class: 'form-control', placeholder: 'Create a Tweet' %>
           <% if @post.errors.full_messages.any? %>
@@ -40,10 +38,10 @@
         </div>
             <% @posts.each do |post| %>
             <div class="d-flex">
-              <div>
-                <%= image_tag(current_user.photo) %>
+              <div class="image">
+                <%= image_tag(post.user.photo.variant(resize: "60x60"), size: '50', class: 'rounded-circle mr-2') %>
               </div>
-              <div class="post-right">
+              <div class="post-right ml-2">
                 <div class="d-flex justify-content-between">
                   <%= post.user.username %><br>
                   <%= like_or_dislike_btn(post) %>
