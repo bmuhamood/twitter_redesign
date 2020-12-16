@@ -18,7 +18,7 @@ posts in the home page, also you can like or dislike a posts and you will se the
 
 ## Live Demo
 
-[Live Demo!!!](https://twitter-design.herokuapp.com/users/sign_in)
+[Live Demo!!!](https://twitappnew.herokuapp.com/users/sign_in)
 
 You have to Sign up to acces to de home page and interact with other users
 
