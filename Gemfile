@@ -33,12 +33,14 @@ gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
 gem 'hirb', '~> 0.7.3'
+gem 'rails_12factor', group: :production
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
