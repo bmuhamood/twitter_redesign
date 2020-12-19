@@ -12,7 +12,7 @@
   <body class="main-grid">
     <% if user_signed_in? %>
      
-      <div class="left-container bg-secondary col-md-2 text-light">
+      <div class="left-container side-container col-md-2 text-light">
           <div class="d-flex pt-3 pb-3 pr-3 pl-2">
             <%= image_tag(current_user.photo.variant(resize: "60x60"), size: '50', class: 'rounded-circle mr-2') %>
             <span class="title-color username text-light mr-3"><%= link_to "#{current_user.username}", "/users/#{current_user.id}",
