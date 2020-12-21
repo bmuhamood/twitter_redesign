@@ -14,6 +14,7 @@ gem 'spec_writer', group: 'development'
 gem 'active_storage_validations', '~> 0.9.0'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'puma', '~> 4.1'
+gem 'font_awesome5_rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
