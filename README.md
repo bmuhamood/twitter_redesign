@@ -3,6 +3,7 @@
 > The project screenshot
 
 ![Screenshot](public/Screenshot.png)
+![Screenshot](public/Screenshots.png)
 
 ## Description
 
