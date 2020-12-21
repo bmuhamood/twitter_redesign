@@ -28,7 +28,7 @@
 </div>
 <div class="bottom-right ">
 	<div class="text-center total-width mt-3">
-		  <%= image_tag(@user.photo.variant(resize: "150x150")) %><br>
+		  <%= image_tag(@user.photo.variant(resize: "130x130"),class: 'rounded-circle mr-2') %><br>
 		<span class=" mt-3"><%= @user.username %></span><br>
 		<span class=" mt-3  gray-text"><%= @user.email %></span><br>
 		<% if @user.id != current_user.id %>
