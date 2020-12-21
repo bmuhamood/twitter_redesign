@@ -8,12 +8,12 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use sqlite3 as the database for Active Record
 gem 'bullet'
 gem 'cloudinary'
+gem 'font_awesome5_rails'
 gem 'mini_magick'
 gem 'spec_writer', group: 'development'
 # Use Puma as the app server
 gem 'active_storage_validations', '~> 0.9.0'
 gem 'gravatar_image_tag', '~> 1.2'
-gem 'font_awesome5_rails'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
