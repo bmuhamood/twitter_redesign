@@ -3,6 +3,7 @@
 > The project screenshot
 
 ![Screenshot](public/Screenshot.png)
+![Screenshot](public/Screenshots.png)
 
 ## Description
 
@@ -18,7 +19,7 @@ posts in the home page, also you can like or dislike a posts and you will se the
 
 ## Live Demo
 
-[Live Demo!!!](https://frozen-springs-34641.herokuapp.com/)
+[Live Demo!!!](https://frozen-springs-34641.herokuapp.com/users/sign_in)
 
 You have to Sign up to acces to de home page and interact with other users
 
