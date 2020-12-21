@@ -43934,3 +43934,585 @@ Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/focw5
 Completed 302 Found in 931ms (ActiveRecord: 0.4ms | Allocations: 3757)
 
 
+Started GET "/" for 127.0.0.1 at 2020-12-21 05:39:05 -0800
+  [1m[35m (16.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (49.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 7], ["id", 6], ["id", 5]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 6], ["post_id", 5], ["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (22.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 6], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 4], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 81.0ms | Allocations: 15694)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1074.1ms | Allocations: 89073)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 5]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 1967ms (Views: 1539.2ms | ActiveRecord: 169.6ms | Allocations: 129823)
+
+
+user: mac
+GET /
+USE eager loading detected
+  User => [:photo_attachment]
+  Add to your query: .includes([:photo_attachment])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:35:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:48:in `block (2 levels) in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:46:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b108b15417a57e0e5bdc0806a1ab3543fc009add/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTmpCNE5qQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--85d6c833d857c866abd5363e8c5ff72957b43d2e/012218f4d43ade31f4e6146e2178f4be.jpg" for 127.0.0.1 at 2020-12-21 05:39:10 -0800
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e228d9a216c00acae2bdefda7d7e19c6ff9b0505/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTmpCNE5qQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--85d6c833d857c866abd5363e8c5ff72957b43d2e/44940073.jpeg" for 127.0.0.1 at 2020-12-21 05:39:12 -0800
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9d74ae221caf056d650cd5140c3975d3e46c762e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTkRCNE5EQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--8196e2ecdc1915fc04f92d07d5803efa06c10192/beac96b8e13d2198fd4bb1d5ef56cdcf.jpg" for 127.0.0.1 at 2020-12-21 05:39:12 -0800
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b108b15417a57e0e5bdc0806a1ab3543fc009add/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTkRCNE5EQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--8196e2ecdc1915fc04f92d07d5803efa06c10192/012218f4d43ade31f4e6146e2178f4be.jpg" for 127.0.0.1 at 2020-12-21 05:39:12 -0800
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e228d9a216c00acae2bdefda7d7e19c6ff9b0505/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTkRCNE5EQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--8196e2ecdc1915fc04f92d07d5803efa06c10192/44940073.jpeg" for 127.0.0.1 at 2020-12-21 05:39:12 -0800
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b108b15417a57e0e5bdc0806a1ab3543fc009add", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTmpCNE5qQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--85d6c833d857c866abd5363e8c5ff72957b43d2e", "filename"=>"012218f4d43ade31f4e6146e2178f4be"}
+  [1m[36mActiveStorage::Blob Load (3.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9d74ae221caf056d650cd5140c3975d3e46c762e", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTkRCNE5EQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--8196e2ecdc1915fc04f92d07d5803efa06c10192", "filename"=>"beac96b8e13d2198fd4bb1d5ef56cdcf"}
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e228d9a216c00acae2bdefda7d7e19c6ff9b0505", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTmpCNE5qQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--85d6c833d857c866abd5363e8c5ff72957b43d2e", "filename"=>"44940073"}
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (27.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b108b15417a57e0e5bdc0806a1ab3543fc009add", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTkRCNE5EQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--8196e2ecdc1915fc04f92d07d5803efa06c10192", "filename"=>"012218f4d43ade31f4e6146e2178f4be"}
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e228d9a216c00acae2bdefda7d7e19c6ff9b0505", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTkRCNE5EQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--8196e2ecdc1915fc04f92d07d5803efa06c10192", "filename"=>"44940073"}
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Cloudinary Storage (1641.8ms) [0m[34mChecked if file exists at key: variants/jwos73gen39pymsp2vk0sf6vb820/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0 (no)[0m
+[36m  Cloudinary Storage (1653.0ms) [0m[34mChecked if file exists at key: variants/rsoyog8sum3a05y0ub53mds1ynbn/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0 (no)[0m
+[36m  Cloudinary Storage (1940.4ms) [0m[34mChecked if file exists at key: variants/jwos73gen39pymsp2vk0sf6vb820/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c (no)[0m
+[36m  Cloudinary Storage (0.3ms) [0m[34mGenerated URL for file at key: variants/jwos73gen39pymsp2vk0sf6vb820/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0 (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/jwos73gen39pymsp2vk0sf6vb820/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0.jpg)[0m
+[36m  Cloudinary Storage (1650.1ms) [0m[34mChecked if file exists at key: variants/uyznjq3mew6fkcagslytftclcgji/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c (no)[0m
+[36m  Cloudinary Storage (0.2ms) [0m[34mGenerated URL for file at key: variants/rsoyog8sum3a05y0ub53mds1ynbn/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0 (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/rsoyog8sum3a05y0ub53mds1ynbn/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0.jpg)[0m
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/jwos73gen39pymsp2vk0sf6vb820/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0.jpg
+[36m  Cloudinary Storage (0.1ms) [0m[34mGenerated URL for file at key: variants/uyznjq3mew6fkcagslytftclcgji/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/uyznjq3mew6fkcagslytftclcgji/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c.jpeg)[0m
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/rsoyog8sum3a05y0ub53mds1ynbn/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0.jpg
+Completed 302 Found in 1658ms (ActiveRecord: 5.1ms | Allocations: 192228)
+
+
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/uyznjq3mew6fkcagslytftclcgji/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c.jpeg
+[36m  Cloudinary Storage (0.1ms) [0m[34mGenerated URL for file at key: variants/jwos73gen39pymsp2vk0sf6vb820/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/jwos73gen39pymsp2vk0sf6vb820/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c.jpg)[0m
+Completed 302 Found in 1706ms (ActiveRecord: 33.9ms | Allocations: 200507)
+
+
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/jwos73gen39pymsp2vk0sf6vb820/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c.jpg
+Completed 302 Found in 1962ms (ActiveRecord: 3.0ms | Allocations: 215090)
+
+
+[36m  Cloudinary Storage (1638.1ms) [0m[34mChecked if file exists at key: variants/uyznjq3mew6fkcagslytftclcgji/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0 (no)[0m
+[36m  Cloudinary Storage (0.4ms) [0m[34mGenerated URL for file at key: variants/uyznjq3mew6fkcagslytftclcgji/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0 (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/uyznjq3mew6fkcagslytftclcgji/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0.jpeg)[0m
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/uyznjq3mew6fkcagslytftclcgji/5979f68d1160d9c31e5ea722e6abb71c18ed643e2aa47f3411f8795022dd63b0.jpeg
+Completed 302 Found in 1662ms (ActiveRecord: 2.5ms | Allocations: 191777)
+
+
+Completed 302 Found in 1699ms (ActiveRecord: 3.2ms | Allocations: 197022)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9d74ae221caf056d650cd5140c3975d3e46c762e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTmpCNE5qQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--85d6c833d857c866abd5363e8c5ff72957b43d2e/beac96b8e13d2198fd4bb1d5ef56cdcf.jpg" for 127.0.0.1 at 2020-12-21 05:39:14 -0800
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9d74ae221caf056d650cd5140c3975d3e46c762e", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTmpCNE5qQUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--85d6c833d857c866abd5363e8c5ff72957b43d2e", "filename"=>"beac96b8e13d2198fd4bb1d5ef56cdcf"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[36m  Cloudinary Storage (872.2ms) [0m[34mChecked if file exists at key: variants/rsoyog8sum3a05y0ub53mds1ynbn/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c (no)[0m
+[36m  Cloudinary Storage (0.3ms) [0m[34mGenerated URL for file at key: variants/rsoyog8sum3a05y0ub53mds1ynbn/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/rsoyog8sum3a05y0ub53mds1ynbn/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c.jpg)[0m
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/rsoyog8sum3a05y0ub53mds1ynbn/baea7fa68ee023171719d5ec1bd4d117f2f0a01c120f823f4f20b221d02b5d0c.jpg
+Completed 302 Found in 879ms (ActiveRecord: 0.8ms | Allocations: 3808)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-21 05:40:10 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 7], ["id", 6], ["id", 5]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 6], ["post_id", 5], ["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 6], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 4], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 25.0ms | Allocations: 13931)
+  Rendered posts/index.html.erb within layouts/application (Duration: 108.8ms | Allocations: 50260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 5]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 167ms (Views: 148.7ms | ActiveRecord: 12.8ms | Allocations: 64570)
+
+
+user: mac
+GET /
+USE eager loading detected
+  User => [:photo_attachment]
+  Add to your query: .includes([:photo_attachment])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:35:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:48:in `block (2 levels) in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:46:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-21 05:40:12 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 7], ["id", 6], ["id", 5]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 6], ["post_id", 5], ["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 6], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 4], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 25.8ms | Allocations: 13922)
+  Rendered posts/index.html.erb within layouts/application (Duration: 102.7ms | Allocations: 50014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 5]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 132ms (Views: 114.0ms | ActiveRecord: 12.4ms | Allocations: 63832)
+
+
+user: mac
+GET /
+USE eager loading detected
+  User => [:photo_attachment]
+  Add to your query: .includes([:photo_attachment])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:35:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:48:in `block (2 levels) in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:46:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
+Started GET "/users/6" for 127.0.0.1 at 2020-12-21 05:40:15 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/concerns/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "cover_image"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:2
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:17
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:17
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/users/show.html.erb:39
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/views/users/show.html.erb:58
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mFriendship Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  Rendered users/show.html.erb within layouts/application (Duration: 104.6ms | Allocations: 33089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 5]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 157ms (Views: 140.1ms | ActiveRecord: 10.3ms | Allocations: 48200)
+
+
+user: mac
+GET /users/6
+USE eager loading detected
+  Friendship => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/users/show.html.erb:60:in `block in _app_views_users_show_html_erb___3250428997057981807_75100'
+  /Users/mac/Desktop/twitter_redesign/app/views/users/show.html.erb:58:in `_app_views_users_show_html_erb___3250428997057981807_75100'
+  /Users/mac/Desktop/twitter_redesign/app/controllers/concerns/users_controller.rb:7:in `show'
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e228d9a216c00acae2bdefda7d7e19c6ff9b0505/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRVd2VERTFNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--bc8ed8f31557b3d9ce757bab989078bdd9116353/44940073.jpeg" for 127.0.0.1 at 2020-12-21 05:40:16 -0800
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e228d9a216c00acae2bdefda7d7e19c6ff9b0505", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRVd2VERTFNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--bc8ed8f31557b3d9ce757bab989078bdd9116353", "filename"=>"44940073"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e6b4765b93994bcd23d0831728d95945b88f12c6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNT0RZd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--a34376634ef62d0d2a9b2dca0a759a66df519a30/6114f98e-7bed-4a9d-9a7d-711cb6f5cac5.jpg" for 127.0.0.1 at 2020-12-21 05:40:16 -0800
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e6b4765b93994bcd23d0831728d95945b88f12c6", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNT0RZd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--a34376634ef62d0d2a9b2dca0a759a66df519a30", "filename"=>"6114f98e-7bed-4a9d-9a7d-711cb6f5cac5"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[36m  Cloudinary Storage (840.6ms) [0m[34mChecked if file exists at key: variants/focw5d9y96opup5mn4ai4bfn0fj3/ec42cc08ef406f8dbe0317fcacc705a5ff2a7814ee295a9859835a21a27b1ed9 (no)[0m
+[36m  Cloudinary Storage (0.4ms) [0m[34mGenerated URL for file at key: variants/focw5d9y96opup5mn4ai4bfn0fj3/ec42cc08ef406f8dbe0317fcacc705a5ff2a7814ee295a9859835a21a27b1ed9 (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/focw5d9y96opup5mn4ai4bfn0fj3/ec42cc08ef406f8dbe0317fcacc705a5ff2a7814ee295a9859835a21a27b1ed9.jpg)[0m
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/focw5d9y96opup5mn4ai4bfn0fj3/ec42cc08ef406f8dbe0317fcacc705a5ff2a7814ee295a9859835a21a27b1ed9.jpg
+Completed 302 Found in 846ms (ActiveRecord: 0.4ms | Allocations: 4086)
+
+
+[36m  Cloudinary Storage (865.7ms) [0m[34mChecked if file exists at key: variants/uyznjq3mew6fkcagslytftclcgji/6d4a609d787c9280842619b5b840dbe324ab5a0ad3d8b99181911d02556bd6f0 (no)[0m
+[36m  Cloudinary Storage (0.2ms) [0m[34mGenerated URL for file at key: variants/uyznjq3mew6fkcagslytftclcgji/6d4a609d787c9280842619b5b840dbe324ab5a0ad3d8b99181911d02556bd6f0 (http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/uyznjq3mew6fkcagslytftclcgji/6d4a609d787c9280842619b5b840dbe324ab5a0ad3d8b99181911d02556bd6f0.jpeg)[0m
+Redirected to http://res.cloudinary.com/ds3hxwfpp/image/upload/v1/variants/uyznjq3mew6fkcagslytftclcgji/6d4a609d787c9280842619b5b840dbe324ab5a0ad3d8b99181911d02556bd6f0.jpeg
+Completed 302 Found in 871ms (ActiveRecord: 0.3ms | Allocations: 9165)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-21 05:40:22 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 7], ["id", 6], ["id", 5]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2, $3)[0m  [["post_id", 6], ["post_id", 5], ["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (4.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 6], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = $1 AND "likes"."user_id" = $2 LIMIT $3[0m  [["post_id", 4], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `like_or_dislike_btn'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:44
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/posts/_follow.html.erb:8
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_follow.html.erb:10
+  [1m[36mFriendship Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:28:in `follow'
+  [1m[36mCACHE Friendship Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 5], ["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:30:in `follow'
+  Rendered posts/_follow.html.erb (Duration: 26.7ms | Allocations: 13923)
+  Rendered posts/index.html.erb within layouts/application (Duration: 116.9ms | Allocations: 50039)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/helpers/application_helper.rb:24:in `following'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 5]]
+  ↳ app/helpers/application_helper.rb:12:in `followers'
+Completed 200 OK in 163ms (Views: 137.7ms | ActiveRecord: 18.8ms | Allocations: 63954)
+
+
+user: mac
+GET /
+USE eager loading detected
+  User => [:photo_attachment]
+  Add to your query: .includes([:photo_attachment])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:35:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
+user: mac
+GET /
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:48:in `block (2 levels) in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:46:in `block in _app_views_posts_index_html_erb___1627503226036957778_27360'
+  /Users/mac/Desktop/twitter_redesign/app/views/posts/index.html.erb:32:in `_app_views_posts_index_html_erb___1627503226036957778_27360'
+
+
