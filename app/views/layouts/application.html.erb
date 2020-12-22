@@ -84,6 +84,11 @@
     <% else %>
         <div class="left-container twitter-color"></div>
         <div class="right-container text-center pt-3 pr-3 pl-3 pb-3 margin-login">
+        <% if alert %>
+          <div id="notice_wrapper">
+          <p class="alert text-danger"><%= alert %></p>
+        </div>
+        <% end %>
           <%= yield %>
         </div>
     <% end %>
