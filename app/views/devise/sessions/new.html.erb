@@ -6,6 +6,7 @@
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center text-info">Login</h3>
+                            <%= render "devise/shared/error_messages", resource: resource %>
                             <div class="form-group">
                                  <%= f.text_field :username,  placeholder: "Username", class: "login-input form-control" %>
                             </div>
