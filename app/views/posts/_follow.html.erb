@@ -1,15 +1,15 @@
-<div >
+<div>
 	<div class="container" >
 		<div class="bottom-nav mt-3">
 			<span class="nav-title">WHO TO FOLLOW</span>
 		</div>
 		<div class="mt-3 title-color">
 
-			<% @user.each do |user| %>
-				<div class="d-flex">
-					    <img class="icon-user mr-2" src="http://www.ku.ac.ug/images/pageImages/chancellor.jpg">
-					<div>
-						<%= user.username  %><br>
+			<% @users.each do |user| %>
+				<div class="d-flex mt-2">
+					   <%= image_tag(user.photo.variant(resize: "40x40"), size: '50', class: 'rounded-circle') %>
+					<div class="ml-3">
+						<%= user.username %><br>
 						<span class="follow-link"><%= follow(user) %></span>
 						<span class="follow-link"><%= link_to 'show', "/users/#{user.id}" %></span>
 						<br><br>
@@ -18,12 +18,10 @@
 
 			<% end %>
 		</div>
+	</div>
+		<div>
 		
 	</div>
-	<div></div>
-	<div></div>
-	
-
-
-
+	<div>
+	</div>
 </div>

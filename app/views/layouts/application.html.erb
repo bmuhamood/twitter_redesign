@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>TwitterRedesign</title>
@@ -12,69 +11,85 @@
   
   <body class="main-grid">
     <% if user_signed_in? %>
-     
-      <div class="left-container bg-secondary col-md-2">
-          <div class="d-flex pt-3 pb-3 pr-3 pl-3">
-            <img class="icon-user mr-2" src="https://www.ub.edu/idp/web/sites/default/files/staff/2019-10/default-avatar.png">
-            <span class="title-color username text-light"><%= link_to "#{current_user.username}", "/users/#{current_user.id}",
-            class: "title-color text-light" %></span>
+      <div class="left-container left-bar col-md-2 text-light">
+          <div class="d-flex pt-3 pb-3 pr-3 pl-2">
+            <%= image_tag(current_user.photo.variant(resize: "60x60"), size: '50', class: 'rounded-circle') %>
+            <span class="title-color username text-light mr-3"><%= link_to "#{current_user.username}", "/users/#{current_user.id}",
+            class: "title-color text-light"%></span>
           </div>
           <div class="d-flex text-center pl-3 pr-3 justify-content-between mt-3">
             <div>
-              <span class="light-grey text-light"><%=  following(current_user) %></span><br>
-              <span class="title-color text-light">Following</span>&nbsp; 
+              <span class="light-grey"><%=  following(current_user) %></span><br>
+              <span class="title-color text-light">Following</span>
             </div>
-
             <div>
-              <span class="light-grey text-light"><%=  followers(current_user) %> </span><br>
+              <span class="light-grey"><%=  followers(current_user) %> </span><br>
               <span class="title-color text-light">Followers</span>
             </div>
           </div>
           <div>
-            <div class=" pt-3 pb-3 pl-3 pr-3">
+            <div class=" pt-3 pb-3 pl-3 pr-3 mt-3">
               <%= link_to root_path do %>
               <img class="icon mr-3" alt="home-icon"src="https://cdn.pixabay.com/photo/2013/07/12/12/56/home-146585_1280.png">
-              <span class="title-color icon-text text-light">HOME</span>
+              <span class="title-color  icon-text text-light">HOME</span>
               <% end %>
             </div>
             <div class=" pt-3 pb-3 pl-3 pr-3">
               <img class="icon mr-3" alt="home-icon"src="https://static.thenounproject.com/png/395124-200.png">
-              <span class="title-color icon-text text-light">CONNECT</span>
+              <a href="#"><span class="title-color icon-text text-light">CONNECT</a></span>
             </div>
             <div class=" pt-3 pb-3 pl-3 pr-3">
               <img class="icon mr-3" alt="home-icon"src="https://www.iconfinder.com/data/icons/feather-2/24/hash-512.png">
-              <span class="title-color icon-text text-light">DISCOVER</span>
+              <a href="#"><span class="title-color icon-text text-light">DISCOVER</a></span>
             </div>
             <div class=" pt-3 pb-3 pl-3 pr-3">
-              <img class="icon mr-3" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEzLjMyMyA1MTMuMzIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTMuMzIzIDUxMy4zMjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjU2LjY2MSwyNTcuMzIzYy0xMzUuMjc1LDAtMjQ1LjMzMywxMTAuMDU5LTI0NS4zMzMsMjQ1LjMzM2MwLDUuODg4LDQuNzc5LDEwLjY2NywxMC42NjcsMTAuNjY3aDQ2OS4zMzMNCgkJCWM1Ljg4OCwwLDEwLjY2Ny00Ljc3OSwxMC42NjctMTAuNjY3QzUwMS45OTUsMzY3LjM4MSwzOTEuOTM2LDI1Ny4zMjMsMjU2LjY2MSwyNTcuMzIzeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8Y2lyY2xlIGN4PSIyNTYuNjYxIiBjeT0iMTE3LjMzMyIgcj0iMTE3LjMzMyIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />
-              <span class="title-color icon-text text-light">PROFILE</span>
+              <img class="icon mr-3 text-light" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEzLjMyMyA1MTMuMzIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTMuMzIzIDUxMy4zMjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjU2LjY2MSwyNTcuMzIzYy0xMzUuMjc1LDAtMjQ1LjMzMywxMTAuMDU5LTI0NS4zMzMsMjQ1LjMzM2MwLDUuODg4LDQuNzc5LDEwLjY2NywxMC42NjcsMTAuNjY3aDQ2OS4zMzMNCgkJCWM1Ljg4OCwwLDEwLjY2Ny00Ljc3OSwxMC42NjctMTAuNjY3QzUwMS45OTUsMzY3LjM4MSwzOTEuOTM2LDI1Ny4zMjMsMjU2LjY2MSwyNTcuMzIzeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8Y2lyY2xlIGN4PSIyNTYuNjYxIiBjeT0iMTE3LjMzMyIgcj0iMTE3LjMzMyIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />
+              <a href="#"><span class="title-color icon-text text-light">PROFILE</a></span>
+            </div>
+            <div class=" pt-3 pb-3 pl-3 pr-3 text-light">
+              <img class="icon mr-3 text-light" alt="home-icon"src="https://image.flaticon.com/icons/png/512/69/69517.png">
+              <a href="#"><span class="title-color icon-text text-light">STATISTICS</a></span>
             </div>
             <div class=" pt-3 pb-3 pl-3 pr-3">
-              <img class="icon mr-3" alt="home-icon"src="https://image.flaticon.com/icons/png/512/69/69517.png">
-              <span class="title-color icon-text text-light">STATISTICS</span>
-            </div>
-            <div class=" pt-3 pb-3 pl-3 pr-3">
-              <img class="icon mr-3" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSIwIDAgNTEyLjAwNTMzIDUxMiIgd2lkdGg9IjUxMnB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0zMjAgMjc3LjMzNTkzOGMtMTEuNzk2ODc1IDAtMjEuMzMyMDMxIDkuNTU4NTkzLTIxLjMzMjAzMSAyMS4zMzIwMzF2ODUuMzM1OTM3YzAgMTEuNzUzOTA2LTkuNTU4NTk0IDIxLjMzMjAzMi0yMS4zMzU5MzggMjEuMzMyMDMyaC02NHYtMzIwYzAtMTguMjE4NzUtMTEuNjA1NDY5LTM0LjQ5NjA5NC0yOS4wNTQ2ODctNDAuNTU0Njg4bC02LjMxNjQwNi0yLjExMzI4MWg5OS4zNzEwOTNjMTEuNzc3MzQ0IDAgMjEuMzM1OTM4IDkuNTc4MTI1IDIxLjMzNTkzOCAyMS4zMzU5Mzd2NjRjMCAxMS43NzM0MzggOS41MzUxNTYgMjEuMzMyMDMyIDIxLjMzMjAzMSAyMS4zMzIwMzJzMjEuMzMyMDMxLTkuNTU4NTk0IDIxLjMzMjAzMS0yMS4zMzIwMzJ2LTY0YzAtMzUuMjg1MTU2LTI4LjcxNDg0My02My45OTk5OTk3NS02NC02My45OTk5OTk3NWgtMjI5LjMzMjAzMWMtLjgxMjUgMC0xLjQ5MjE4OC4zNjMyODE3NS0yLjI4MTI1LjQ2ODc0OTc1LTEuMDI3MzQ0LS4wODU5MzctMi4wMDc4MTItLjQ2ODc0OTc1LTMuMDUwNzgxLS40Njg3NDk3NS0yMy41MzEyNSAwLTQyLjY2Nzk2OSAxOS4xMzI4MTI3NS00Mi42Njc5NjkgNDIuNjY0MDYyNzV2Mzg0YzAgMTguMjE4NzUgMTEuNjA1NDY5IDM0LjQ5NjA5MyAyOS4wNTQ2ODggNDAuNTU0Njg3bDEyOC4zODY3MTggNDIuNzk2ODc1YzQuMzUxNTYzIDEuMzQzNzUgOC42Nzk2ODggMS45ODQzNzUgMTMuMjI2NTYzIDEuOTg0Mzc1IDIzLjUzMTI1IDAgNDIuNjY0MDYyLTE5LjEzNjcxOCA0Mi42NjQwNjItNDIuNjY3OTY4di0yMS4zMzIwMzJoNjRjMzUuMjg1MTU3IDAgNjQtMjguNzE0ODQ0IDY0LTY0di04NS4zMzU5MzdjMC0xMS43NzM0MzgtOS41MzUxNTYtMjEuMzMyMDMxLTIxLjMzMjAzMS0yMS4zMzIwMzF6bTAgMCIvPjxwYXRoIGQ9Im01MDUuNzUgMTk4LjI1MzkwNi04NS4zMzU5MzgtODUuMzMyMDMxYy02LjA5NzY1Ni02LjEwMTU2My0xNS4yNzM0MzctNy45Mzc1LTIzLjI1LTQuNjMyODEzLTcuOTU3MDMxIDMuMzA4NTk0LTEzLjE2NDA2MiAxMS4wOTM3NS0xMy4xNjQwNjIgMTkuNzE0ODQ0djY0aC04NS4zMzIwMzFjLTExLjc3NzM0NCAwLTIxLjMzNTkzOCA5LjU1NDY4OC0yMS4zMzU5MzggMjEuMzMyMDMyIDAgMTEuNzc3MzQzIDkuNTU4NTk0IDIxLjMzMjAzMSAyMS4zMzU5MzggMjEuMzMyMDMxaDg1LjMzMjAzMXY2NGMwIDguNjIxMDkzIDUuMjA3MDMxIDE2LjQwNjI1IDEzLjE2NDA2MiAxOS43MTQ4NDMgNy45NzY1NjMgMy4zMDQ2ODggMTcuMTUyMzQ0IDEuNDY4NzUgMjMuMjUtNC42Mjg5MDZsODUuMzM1OTM4LTg1LjMzNTkzN2M4LjMzOTg0NC04LjMzOTg0NCA4LjMzOTg0NC0yMS44MjQyMTkgMC0zMC4xNjQwNjN6bTAgMCIvPjwvc3ZnPg==" />
+              <img class="icon mr-3 text-light" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSIwIDAgNTEyLjAwNTMzIDUxMiIgd2lkdGg9IjUxMnB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0zMjAgMjc3LjMzNTkzOGMtMTEuNzk2ODc1IDAtMjEuMzMyMDMxIDkuNTU4NTkzLTIxLjMzMjAzMSAyMS4zMzIwMzF2ODUuMzM1OTM3YzAgMTEuNzUzOTA2LTkuNTU4NTk0IDIxLjMzMjAzMi0yMS4zMzU5MzggMjEuMzMyMDMyaC02NHYtMzIwYzAtMTguMjE4NzUtMTEuNjA1NDY5LTM0LjQ5NjA5NC0yOS4wNTQ2ODctNDAuNTU0Njg4bC02LjMxNjQwNi0yLjExMzI4MWg5OS4zNzEwOTNjMTEuNzc3MzQ0IDAgMjEuMzM1OTM4IDkuNTc4MTI1IDIxLjMzNTkzOCAyMS4zMzU5Mzd2NjRjMCAxMS43NzM0MzggOS41MzUxNTYgMjEuMzMyMDMyIDIxLjMzMjAzMSAyMS4zMzIwMzJzMjEuMzMyMDMxLTkuNTU4NTk0IDIxLjMzMjAzMS0yMS4zMzIwMzJ2LTY0YzAtMzUuMjg1MTU2LTI4LjcxNDg0My02My45OTk5OTk3NS02NC02My45OTk5OTk3NWgtMjI5LjMzMjAzMWMtLjgxMjUgMC0xLjQ5MjE4OC4zNjMyODE3NS0yLjI4MTI1LjQ2ODc0OTc1LTEuMDI3MzQ0LS4wODU5MzctMi4wMDc4MTItLjQ2ODc0OTc1LTMuMDUwNzgxLS40Njg3NDk3NS0yMy41MzEyNSAwLTQyLjY2Nzk2OSAxOS4xMzI4MTI3NS00Mi42Njc5NjkgNDIuNjY0MDYyNzV2Mzg0YzAgMTguMjE4NzUgMTEuNjA1NDY5IDM0LjQ5NjA5MyAyOS4wNTQ2ODggNDAuNTU0Njg3bDEyOC4zODY3MTggNDIuNzk2ODc1YzQuMzUxNTYzIDEuMzQzNzUgOC42Nzk2ODggMS45ODQzNzUgMTMuMjI2NTYzIDEuOTg0Mzc1IDIzLjUzMTI1IDAgNDIuNjY0MDYyLTE5LjEzNjcxOCA0Mi42NjQwNjItNDIuNjY3OTY4di0yMS4zMzIwMzJoNjRjMzUuMjg1MTU3IDAgNjQtMjguNzE0ODQ0IDY0LTY0di04NS4zMzU5MzdjMC0xMS43NzM0MzgtOS41MzUxNTYtMjEuMzMyMDMxLTIxLjMzMjAzMS0yMS4zMzIwMzF6bTAgMCIvPjxwYXRoIGQ9Im01MDUuNzUgMTk4LjI1MzkwNi04NS4zMzU5MzgtODUuMzMyMDMxYy02LjA5NzY1Ni02LjEwMTU2My0xNS4yNzM0MzctNy45Mzc1LTIzLjI1LTQuNjMyODEzLTcuOTU3MDMxIDMuMzA4NTk0LTEzLjE2NDA2MiAxMS4wOTM3NS0xMy4xNjQwNjIgMTkuNzE0ODQ0djY0aC04NS4zMzIwMzFjLTExLjc3NzM0NCAwLTIxLjMzNTkzOCA5LjU1NDY4OC0yMS4zMzU5MzggMjEuMzMyMDMyIDAgMTEuNzc3MzQzIDkuNTU4NTk0IDIxLjMzMjAzMSAyMS4zMzU5MzggMjEuMzMyMDMxaDg1LjMzMjAzMXY2NGMwIDguNjIxMDkzIDUuMjA3MDMxIDE2LjQwNjI1IDEzLjE2NDA2MiAxOS43MTQ4NDMgNy45NzY1NjMgMy4zMDQ2ODggMTcuMTUyMzQ0IDEuNDY4NzUgMjMuMjUtNC42Mjg5MDZsODUuMzM1OTM4LTg1LjMzNTkzN2M4LjMzOTg0NC04LjMzOTg0NCA4LjMzOTg0NC0yMS44MjQyMTkgMC0zMC4xNjQwNjN6bTAgMCIvPjwvc3ZnPg==" />
               <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "sign-out title-color icon-text text-light" %>
             </div>
           </div>
       </div>
-      <div class="right-container">
-        <div class="top-section d-flex justify-content-between pb-1 pr-3 pl-3 twitter-color">
+   <!--   <div class="top-section d-flex justify-content-between pb-1 pr-3 pl-3 twitter-color bg-primary">
+          <div class="pt-2"> -->
 
+      <div class="right-container">
+        <div class="top-section d-flex pb-1 pr-3 pl-3 twitter-color bg-primary">
+          <div class="mr-auto p-2">
+            <i class="fab fa-twitter" style="font-size:20px;color:white"></i>
+          </div> 
+          <div class="p-2 mr-3">
+          <i class="fas fa-pencil-alt fa-1x text-dark"></i>
+          </div>         
+          <div class="p-2 mr-3">
+            <i class="fa fa-envelope fa-1x text-dark"></i>
+          </div>
+          <div class="p-2 mr-3">
+            <i class="fa fa-search fa-1x text-dark"></i>
+          </div>
+          <div class="d-flex pt-2 pm-2">
+            <i class="fa fa-cog fa-1x text-dark"></i>
+          </div>
         </div>
         <div class="bottom-section"> 
           <%= yield %>
       </div>
-   
     <% else %>
-      
         <div class="left-container twitter-color"></div>
-        <div class="right-container text-center pt-3 pr-3 pl-3 pb-3 margin-login">
-          <%= yield %>
+        <div class="right-container text-center pt-3 pr-3 pl-3 pb-3 margin-login">  
+        <% if alert %>
+          <div id="notice_wrapper">
+          <p class="alert text-danger"><%= alert %></p>
         </div>
-      
+        <% end %>
+        <%= yield %>
+        </div>
     <% end %>
-
   </body>
 </html>

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ApplicationHelper
   def like_or_dislike_btn(post)
     like = Like.find_by(post: post, user: current_user)
@@ -12,6 +10,14 @@ module ApplicationHelper
 
   def followers(user)
     user.other_friendships.count
+  end
+
+  def user_avatar(user, size = 40)
+    if user.avatar.attached?
+      user.avatar.variant(resize: "#{size}x#{size}!")
+    else
+      gravatar_image_url(user.email, size: size)
+    end
   end
 
   def following(user)

@@ -3,8 +3,7 @@
 > The project screenshot
 
 ![Screenshot](public/Screenshot.png)
-
-All rights to Gregoire Vella on Behance.
+![Screenshot](public/Screenshots.png)
 
 ## Description
 
@@ -20,7 +19,8 @@ posts in the home page, also you can like or dislike a posts and you will se the
 
 ## Live Demo
 
-[Check the app out!!!]()
+[Live Demo!!!](https://frozen-springs-34641.herokuapp.com/users/sign_in)
+[n+1 queries explained - Live Video!!!](https://www.loom.com/share/05559ca5897048db878a94b18de74a30)
 
 You have to Sign up to acces to de home page and interact with other users
 
@@ -99,6 +99,7 @@ Give a ⭐️ if you like this project!
 
 - Microverse
 - Odin Project
+- All rights to Gregoire Vella on Behance.
 
 ## 📝 License
 

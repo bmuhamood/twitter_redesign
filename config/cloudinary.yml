@@ -1,0 +1,19 @@
+development:
+  cloud_name: 'ds3hxwfpp'
+  api_key: '419494693465314'
+  api_secret: 5IWtRakaZe8xmfUumscc64FCZy0
+  enhance_image_tag: true
+  static_file_support: true
+production:
+  cloud_name: 'ds3hxwfpp'
+  api_key: '419494693465314'
+  api_secret: 5IWtRakaZe8xmfUumscc64FCZy0
+  enhance_image_tag: true
+  static_file_support: true
+  cdn_subdomain: true
+test:
+  cloud_name: 'ds3hxwfpp'
+  api_key: '419494693465314'
+  api_secret: 5IWtRakaZe8xmfUumscc64FCZy0 
+  enhance_image_tag: true
+  static_file_support: false

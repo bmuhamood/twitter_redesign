@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -11,4 +9,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :friendships
   has_many :other_friendships, foreign_key: 'friend_id', class_name: 'Friendship'
+  has_one_attached :photo, dependent: :destroy
+  has_one_attached :cover_image, dependent: :destroy
 end

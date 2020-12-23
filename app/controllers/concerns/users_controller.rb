@@ -1,3 +1,4 @@
+# rubocop: disable Style/FrozenStringLiteralComment
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
@@ -6,3 +7,4 @@ class UsersController < ApplicationController
     render 'show'
   end
 end
+# rubocop: enable Style/FrozenStringLiteralComment

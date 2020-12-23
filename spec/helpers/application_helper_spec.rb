@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: :helper do
@@ -7,7 +5,7 @@ RSpec.describe ApplicationHelper, type: :helper do
   Friendship.delete_all
 
   it 'It checks if User has followers' do
-    User.create(email: 'bbosa2009@gmail.com', username: 'bmuhamood', password: 'password')
+    User.create(email: 'bbosa2009@gmail.com', username: 'bmuhamood', password: 'Hussein2019')
     test_u1 = User.first
     User.create(email: 'test@test.com', username: 'nsubuga', password: 'password')
     test_u2 = User.last
