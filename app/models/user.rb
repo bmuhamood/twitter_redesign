@@ -11,7 +11,4 @@ class User < ApplicationRecord
   has_many :other_friendships, foreign_key: 'friend_id', class_name: 'Friendship'
   has_one_attached :photo, dependent: :destroy
   has_one_attached :cover_image, dependent: :destroy
-
-  validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
-  validates :cover_image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
 end
