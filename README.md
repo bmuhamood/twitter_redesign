@@ -20,6 +20,7 @@ posts in the home page, also you can like or dislike a posts and you will se the
 ## Live Demo
 
 [Live Demo!!!](https://frozen-springs-34641.herokuapp.com/users/sign_in)
+[n+1 queries explained - Live Video!!!](https://www.loom.com/share/05559ca5897048db878a94b18de74a30)
 
 You have to Sign up to acces to de home page and interact with other users
 
