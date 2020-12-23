@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, :type => :model do
+RSpec.describe User, type: :model do
   User.delete_all
   Friendship.delete_all
   User.create(email: 'bbosa2009@gmail.com', username: 'bmuhamood', password: 'password')
